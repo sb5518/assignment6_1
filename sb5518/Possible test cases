@@ -1,0 +1,46 @@
+"""Here you will find a few informal tests that I run to test the interval class and methods"""
+
+
+int1 = interval("(5,11]")
+
+print int1
+
+int2 = interval("[10,15)")
+print int2
+
+print interval.mergeIntervals(int1, int2)
+
+int7 = interval("(-3,0]")
+int8 = interval("(0,4]")
+print interval.mergeIntervals(int7, int8)
+
+int7 = interval("(-3,0]")
+int3 = interval("[1,5]")
+int4 = interval("[2,7)")
+int5 = interval("(9,12)")
+int6 = interval("[10,15]")
+int8 = interval("(16,20]")
+int9 = interval("[99,100]")
+int10 = interval("[19,50]")
+int11 = interval("[7,9]")
+
+
+
+
+
+print interval.mergeIntervals(int5, int6)
+
+
+intervals_test = [int3, int4, int5, int6, int7, int8, int9, int10]
+print type(intervals_test)
+intervals_test2 = 1
+intervals_test3 = [int3, int4, int5, 1]
+intervals_test4 =[int4, int5, int10]
+
+trial1 = interval.mergeOverlapping(intervals_test)
+#trial2 = interval.mergeOverlapping(intervals_test2) #Should raise an error
+#trial3 = interval.mergeOverlapping(intervals_test3) #Should raise an error
+trial4 = interval.insert(intervals_test4,int11)
+
+#for i in trial4:
+    #print i
